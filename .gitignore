@@ -1,0 +1,50 @@
+# Secrets
+.env
+.env.local
+*.pem
+*.key
+
+# Audio data and model weights — never commit
+data/raw/
+data/audio/
+data/Task1/
+data/Task2/
+data/Task3/
+*.wav
+*.mp3
+*.flac
+*.ogg
+*.m4a
+*.pt
+*.bin
+*.ckpt
+*.safetensors
+
+# Generated outputs
+data/metadata/
+data/prompts/
+results/
+logs/
+figures/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+build/
+dist/
+
+# Conda / venv
+env/
+venv/
+.venv/
+
+# Editor / OS
+.DS_Store
+.idea/
+.vscode/
+*.swp

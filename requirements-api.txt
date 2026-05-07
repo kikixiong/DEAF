@@ -1,0 +1,3 @@
+# Extra deps for API-only setups (GPT-4o-Audio, Gemini, Qwen3-Omni, judge).
+-r requirements.txt
+openai>=1.40             # used by judge.py for the DeepSeek client

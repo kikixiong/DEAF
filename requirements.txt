@@ -1,0 +1,7 @@
+# Core deps shared by every script.
+pyyaml>=6.0
+tqdm>=4.65
+requests>=2.31
+openpyxl>=3.1            # for parse_metadata.py BSC/SIC xlsx loading
+matplotlib>=3.7          # for visualize.py
+numpy>=1.24

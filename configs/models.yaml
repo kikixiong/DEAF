@@ -1,0 +1,70 @@
+# DEAF model registry.
+#
+# Two ways to provide credentials and paths:
+#   1. ${ENV_VAR} placeholders below (preferred). Set them in your .env file.
+#   2. Hard-code values (e.g. for one-off experiments). Never commit secrets.
+#
+# After editing this file, no code change is needed: src/run_inference.py
+# loads ${VAR} occurrences from os.environ at runtime.
+
+models:
+  # === API-based models ============================================
+  - name: gpt-4o-audio
+    type: api
+    adapter: gpt4o
+    model_id: openai/gpt-4o-audio-preview
+    base_url: https://openrouter.ai/api/v1
+    api_key: ${OPENROUTER_API_KEY}
+    max_tokens: 512
+
+  - name: gemini-2.5-flash
+    type: api
+    adapter: gemini
+    model_id: google/gemini-2.5-flash
+    base_url: https://openrouter.ai/api/v1
+    api_key: ${OPENROUTER_API_KEY}
+    max_tokens: 512
+
+  - name: gemini-3-flash
+    type: api
+    adapter: gemini
+    model_id: google/gemini-3-flash-preview
+    base_url: https://openrouter.ai/api/v1
+    api_key: ${OPENROUTER_API_KEY}
+    max_tokens: 512
+
+  - name: qwen3-omni
+    type: api
+    adapter: qwen3_omni
+    model_id: Qwen/Qwen3-Omni-30B-A3B-Instruct
+    base_url: https://api.siliconflow.com/v1
+    api_key: ${SILICONFLOW_API_KEY}
+    max_tokens: 512
+
+  # === Local models (require GPU + per-model conda env) =============
+  - name: qwen2-audio
+    type: local
+    adapter: qwen2_audio
+    conda_env: qwen2_audio
+    model_path: ${QWEN2_AUDIO_MODEL}
+
+  - name: audio-flamingo-3
+    type: local
+    adapter: audio_flamingo3
+    conda_env: af3
+    code_dir: ${AF3_DIR}
+    model_path: ${AF3_MODEL}
+
+  - name: desta2
+    type: local
+    adapter: desta2
+    conda_env: desta2
+    code_dir: ${DESTA_DIR}
+    model_path: ${DESTA2_MODEL}
+
+  - name: salmonn
+    type: local
+    adapter: salmonn
+    conda_env: salmon_env
+    code_dir: ${SALMONN_DIR}
+    cfg_path: ${SALMONN_DIR}/configs/decode_config.yaml

@@ -1,0 +1,9 @@
+# Common deps for local-GPU model adapters.
+# Per-model envs (qwen2_audio, salmon_env, desta2, af3) need additional
+# packages on top of these. See docs/models/<model>.md.
+-r requirements-api.txt
+torch>=2.1
+transformers>=4.45
+librosa>=0.10
+soundfile>=0.12
+accelerate>=0.30
