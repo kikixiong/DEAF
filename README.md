@@ -1,8 +1,13 @@
 # DEAF — Diagnostic Evaluation of Acoustic Faithfulness
 
+[![arXiv](https://img.shields.io/badge/arXiv-2603.18048-b31b1b.svg)](https://arxiv.org/abs/2603.18048)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 A benchmark and evaluation pipeline for testing whether Audio Large Language
 Models (Audio LLMs) actually listen to the audio, or fall back on textual
 priors when audio and text disagree.
+
+📄 **Paper**: <https://arxiv.org/abs/2603.18048>
 
 DEAF crafts audio clips where an acoustic ground-truth signal (vocal emotion,
 background environment, or speaker identity) deliberately conflicts with the
@@ -174,11 +179,12 @@ Adding a new model = one Python file under `src/adapters/`; see `docs/pipeline.m
 If you use DEAF, please cite the paper:
 
 ```bibtex
-@inproceedings{deaf2026,
-  title  = {DEAF: A Benchmark for Diagnostic Evaluation of Acoustic Faithfulness in Audio Language Models},
-  author = {TBD},
-  year   = {2026},
-  note   = {Under review at ACL ARR 2026}
+@article{deaf2026,
+  title   = {DEAF: A Benchmark for Diagnostic Evaluation of Acoustic Faithfulness in Audio Language Models},
+  author  = {Xiong, Jiaqi and others},
+  journal = {arXiv preprint arXiv:2603.18048},
+  year    = {2026},
+  url     = {https://arxiv.org/abs/2603.18048}
 }
 ```
 
